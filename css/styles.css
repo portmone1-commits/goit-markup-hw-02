@@ -1,0 +1,312 @@
+/* ========= CSS Custom Properties ========= */
+:root {
+  --primary-brand: #4d5ae5;
+  --pressed-state: #404bbf;
+  --dark: #2e2f42;
+  --text: #434455;
+  --light-bg: #f4f4fd;
+  --accent: #e7e9fc;
+  --white: #ffffff;
+}
+
+/* ========= Global Reset ========= */
+
+/* скидаємо відступи у заголовків, параграфів, списків */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+/* скидаємо маркери у списків та відступи */
+ul,
+ol {
+  list-style: none; /* без маркерів */
+  margin: 0;
+  padding: 0;
+}
+
+/* скидаємо дефолтне підкреслення для посилань */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* загальний box-sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ========= Body ========= */
+
+body {
+  font-family: "Roboto", sans-serif; /* основний шрифт */
+  color: var(--text); /* колір тексту */
+  background-color: var(--white); /* колір фону сторінки */
+  font-size: 16px; /* базовий розмір шрифту */
+  line-height: 1.5;
+}
+
+/* ========= Utility ========= */
+
+.container {
+  width: 1158px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.section {
+  padding: 120px 0;
+}
+
+/* ========= Header ========= */
+
+.page-header {
+  border-bottom: 1px solid var(--accent);
+  background-color: var(--white);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 76px;
+}
+
+.logo {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.17;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--dark);
+}
+
+.logo-accent {
+  color: var(--primary-brand);
+}
+
+.nav-list {
+  display: flex;
+  gap: 40px;
+}
+
+.nav-link {
+  display: block;
+  padding: 24px 0;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--dark);
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--pressed-state);
+}
+
+.header-contacts {
+  display: flex;
+  gap: 40px;
+  font-style: normal;
+}
+
+.contact-link {
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  color: var(--text);
+}
+
+.contact-link:hover,
+.contact-link:focus {
+  color: var(--pressed-state);
+}
+
+/* ========= Hero ========= */
+
+.hero {
+  background-color: var(--dark);
+  padding: 188px 0;
+  text-align: center;
+}
+
+.hero-title {
+  max-width: 496px;
+  margin: 0 auto 48px;
+  font-size: 56px;
+  line-height: 1.07;
+  letter-spacing: 0.02em;
+  color: var(--white);
+}
+
+.btn-primary {
+  min-width: 169px;
+  border: none;
+  border-radius: 4px;
+  padding: 16px 32px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  background-color: var(--primary-brand);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--pressed-state);
+}
+
+/* ========= Benefits ========= */
+
+.benefits-section {
+  background-color: var(--white);
+}
+
+.benefits-list {
+  display: flex;
+  gap: 24px;
+}
+
+.benefits-item {
+  flex-basis: calc((100% - 72px) / 4);
+}
+
+.benefits-title {
+  margin-bottom: 8px;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--dark);
+}
+
+.benefits-text {
+  letter-spacing: 0.02em;
+}
+
+/* ========= Team ========= */
+
+.team-section {
+  background-color: var(--light-bg);
+}
+
+.section-title {
+  margin-bottom: 72px;
+  text-align: center;
+  font-size: 36px;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  color: var(--dark);
+}
+
+.team-list {
+  display: flex;
+  gap: 24px;
+}
+
+.team-card {
+  background-color: var(--white);
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 2px 1px rgba(46, 47, 66, 0.08), 0 1px 1px rgba(46, 47, 66, 0.16),
+    0 1px 6px rgba(46, 47, 66, 0.08);
+  flex-basis: calc((100% - 72px) / 4);
+  overflow: hidden;
+}
+
+.team-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.team-card-content {
+  padding: 32px 16px;
+  text-align: center;
+}
+
+.team-name {
+  margin-bottom: 8px;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--dark);
+}
+
+.team-position {
+  letter-spacing: 0.02em;
+}
+
+/* ========= Portfolio ========= */
+
+.portfolio-section {
+  background-color: var(--white);
+}
+
+.portfolio-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  row-gap: 48px;
+}
+
+.portfolio-card {
+  flex-basis: calc((100% - 48px) / 3);
+  background-color: var(--white);
+  border: 1px solid var(--accent);
+  border-top: none;
+}
+
+.portfolio-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.portfolio-card-content {
+  padding: 32px 16px;
+}
+
+.portfolio-title {
+  margin-bottom: 8px;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--dark);
+}
+
+.portfolio-text {
+  letter-spacing: 0.02em;
+}
+
+/* ========= Footer ========= */
+
+.page-footer {
+  background-color: var(--dark);
+  padding: 100px 0;
+}
+
+.footer-logo {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: var(--light-bg);
+}
+
+.footer-text {
+  max-width: 264px;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+}
