@@ -1,75 +1,66 @@
-/* ========= CSS Custom Properties ========= */
-:root {
-  --primary-brand: #4d5ae5;
-  --pressed-state: #404bbf;
-  --dark: #2e2f42;
-  --text: #434455;
-  --light-bg: #f4f4fd;
-  --accent: #e7e9fc;
-  --white: #ffffff;
-}
+/* ------------- RESET & BASE ------------- */
 
-/* ========= Global Reset ========= */
-
-/* скидаємо відступи у заголовків, параграфів, списків */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  margin: 0;
-}
-
-/* скидаємо маркери у списків та відступи */
-ul,
-ol {
-  list-style: none; /* без маркерів */
-  margin: 0;
-  padding: 0;
-}
-
-/* скидаємо дефолтне підкреслення для посилань */
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* загальний box-sizing */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-/* ========= Body ========= */
-
 body {
-  font-family: "Roboto", sans-serif; /* основний шрифт */
-  color: var(--text); /* колір тексту */
-  background-color: var(--white); /* колір фону сторінки */
-  font-size: 16px; /* базовий розмір шрифту */
-  line-height: 1.5;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  color: #434455; /* main text color */
+  background-color: #ffffff; /* main background color */
 }
 
-/* ========= Utility ========= */
+/* Reset lists */
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Reset links underline + inherit color */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Images */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Utility: visually hidden (for h2 in features) */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+/* ------------- LAYOUT ------------- */
 
 .container {
-  width: 1158px;
-  margin: 0 auto;
+  max-width: 1158px;
   padding: 0 15px;
+  margin: 0 auto;
 }
 
-.section {
-  padding: 120px 0;
-}
+/* ------------- HEADER ------------- */
 
-/* ========= Header ========= */
-
-.page-header {
-  border-bottom: 1px solid var(--accent);
-  background-color: var(--white);
+.header {
+  border-bottom: 1px solid #e7e9fc;
+  background-color: #ffffff;
 }
 
 .header-container {
@@ -78,24 +69,25 @@ body {
   justify-content: space-between;
 }
 
-.main-nav {
-  display: flex;
-  align-items: center;
-  gap: 76px;
-}
-
-.logo {
+/* Logo */
+.logo,
+.footer-logo {
   font-family: "Raleway", sans-serif;
   font-weight: 700;
   font-size: 18px;
   line-height: 1.17;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  color: var(--dark);
+  color: #2e2f42;
 }
 
 .logo-accent {
-  color: var(--primary-brand);
+  color: #4d5ae5;
+}
+
+/* Nav */
+.nav {
+  margin-left: 76px;
 }
 
 .nav-list {
@@ -107,110 +99,174 @@ body {
   display: block;
   padding: 24px 0;
   font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
   letter-spacing: 0.02em;
-  color: var(--dark);
+  color: #2e2f42;
 }
 
 .nav-link:hover,
 .nav-link:focus {
-  color: var(--pressed-state);
+  color: #404bbf;
 }
 
-.header-contacts {
-  display: flex;
-  gap: 40px;
+.nav-link.current {
+  color: #404bbf;
+}
+
+/* Contacts */
+.header-address {
   font-style: normal;
 }
 
-.contact-link {
+.address-list {
+  display: flex;
+  gap: 40px;
+}
+
+.address-link {
   font-size: 16px;
+  line-height: 1.5;
   letter-spacing: 0.02em;
-  color: var(--text);
+  color: #434455;
 }
 
-.contact-link:hover,
-.contact-link:focus {
-  color: var(--pressed-state);
+.address-link:hover,
+.address-link:focus {
+  color: #404bbf;
 }
 
-/* ========= Hero ========= */
+/* ------------- HERO ------------- */
 
 .hero {
-  background-color: var(--dark);
+  background-color: #2e2f42; /* dark hero background */
   padding: 188px 0;
   text-align: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.hero-container {
+  max-width: 496px;
+  margin: 0 auto;
 }
 
 .hero-title {
-  max-width: 496px;
-  margin: 0 auto 48px;
+  margin: 0 0 48px;
   font-size: 56px;
   line-height: 1.07;
   letter-spacing: 0.02em;
-  color: var(--white);
+  color: #ffffff;
 }
 
-.btn-primary {
+.hero-button {
+  display: inline-block;
   min-width: 169px;
-  border: none;
-  border-radius: 4px;
   padding: 16px 32px;
+  border-radius: 4px;
+  border: none;
   cursor: pointer;
   font-family: inherit;
-  font-size: 16px;
   font-weight: 500;
+  font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.04em;
-  color: var(--white);
-  background-color: var(--primary-brand);
+  color: #ffffff;
+  background-color: #4d5ae5;
 }
 
-.btn-primary:hover,
-.btn-primary:focus {
-  background-color: var(--pressed-state);
+.hero-button:hover,
+.hero-button:focus {
+  background-color: #404bbf;
 }
 
-/* ========= Benefits ========= */
+/* ------------- SECTION TITLES ------------- */
 
-.benefits-section {
-  background-color: var(--white);
+.section-title {
+  margin: 0 0 72px;
+  font-size: 36px;
+  line-height: 1.11;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  color: #2e2f42;
 }
 
-.benefits-list {
+/* ------------- FEATURES ------------- */
+
+.features {
+  padding: 120px 0;
+  background-color: #ffffff;
+}
+
+.features-list {
   display: flex;
   gap: 24px;
 }
 
-.benefits-item {
+.features-item {
   flex-basis: calc((100% - 72px) / 4);
 }
 
-.benefits-title {
-  margin-bottom: 8px;
+.features-subtitle {
+  margin: 0 0 8px;
   font-size: 20px;
-  font-weight: 500;
+  line-height: 1.2;
   letter-spacing: 0.02em;
-  color: var(--dark);
+  color: #2e2f42;
 }
 
-.benefits-text {
+.features-text {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
   letter-spacing: 0.02em;
+  color: #434455;
 }
 
-/* ========= Team ========= */
+/* ------------- PORTFOLIO ------------- */
 
-.team-section {
-  background-color: var(--light-bg);
+.portfolio {
+  padding: 120px 0;
+  background-color: #ffffff;
 }
 
-.section-title {
-  margin-bottom: 72px;
-  text-align: center;
-  font-size: 36px;
-  line-height: 1.11;
+.portfolio-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px 24px;
+}
+
+.portfolio-item {
+  flex-basis: calc((100% - 48px) / 3);
+  border: 1px solid #e7e9fc;
+  border-top: none;
+  background-color: #ffffff;
+  padding: 32px 16px;
+}
+
+.portfolio-title {
+  margin: 0 0 8px;
+  font-size: 20px;
+  line-height: 1.2;
   letter-spacing: 0.02em;
-  text-transform: capitalize;
-  color: var(--dark);
+  color: #2e2f42;
+}
+
+.portfolio-text {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #434455;
+}
+
+/* ------------- TEAM ------------- */
+
+.team {
+  padding: 120px 0;
+  background-color: #f4f4fd; /* light background for team section */
 }
 
 .team-list {
@@ -218,95 +274,56 @@ body {
   gap: 24px;
 }
 
-.team-card {
-  background-color: var(--white);
+.team-item {
+  flex-basis: calc((100% - 72px) / 4);
+  background-color: #ffffff;
   border-radius: 0 0 4px 4px;
   box-shadow: 0 2px 1px rgba(46, 47, 66, 0.08), 0 1px 1px rgba(46, 47, 66, 0.16),
     0 1px 6px rgba(46, 47, 66, 0.08);
-  flex-basis: calc((100% - 72px) / 4);
-  overflow: hidden;
 }
 
-.team-card img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.team-card-content {
+.team-content {
   padding: 32px 16px;
   text-align: center;
 }
 
 .team-name {
-  margin-bottom: 8px;
+  margin: 0 0 8px;
   font-size: 20px;
-  font-weight: 500;
+  line-height: 1.2;
   letter-spacing: 0.02em;
-  color: var(--dark);
+  color: #2e2f42;
 }
 
 .team-position {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
   letter-spacing: 0.02em;
+  color: #434455;
 }
 
-/* ========= Portfolio ========= */
+/* ------------- FOOTER ------------- */
 
-.portfolio-section {
-  background-color: var(--white);
-}
-
-.portfolio-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-  row-gap: 48px;
-}
-
-.portfolio-card {
-  flex-basis: calc((100% - 48px) / 3);
-  background-color: var(--white);
-  border: 1px solid var(--accent);
-  border-top: none;
-}
-
-.portfolio-card img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.portfolio-card-content {
-  padding: 32px 16px;
-}
-
-.portfolio-title {
-  margin-bottom: 8px;
-  font-size: 20px;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  color: var(--dark);
-}
-
-.portfolio-text {
-  letter-spacing: 0.02em;
-}
-
-/* ========= Footer ========= */
-
-.page-footer {
-  background-color: var(--dark);
+.footer {
+  background-color: #2e2f42;
   padding: 100px 0;
+}
+
+.footer-container {
+  width: 264px;
 }
 
 .footer-logo {
   display: inline-block;
   margin-bottom: 16px;
-  color: var(--light-bg);
+  color: #f4f4fd;
 }
 
 .footer-text {
-  max-width: 264px;
-  color: var(--accent);
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
   letter-spacing: 0.02em;
+  color: #f4f4fd;
 }
