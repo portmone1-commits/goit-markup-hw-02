@@ -1,159 +1,259 @@
-/* -----------------------
-   1. Base styles (body)
------------------------- */
+/* ====== БАЗОВІ НАЛАШТУВАННЯ ====== */
 
 body {
-  font-family: "Roboto", sans-serif; /* Roboto set ONLY here */
-  color: #434455; /* dominant text color from layout */
-  background-color: #ffffff; /* main page background */
-  font-size: 16px;
-  line-height: 1.5; /* 24px / 16px = 1.5 */
-  margin: 0;
+  font-family: "Roboto", sans-serif; /* C5, C6, C7 */
+  color: #2e2f42; /* C8 */
+  background-color: #ffffff; /* C11 */
+  font-size: 16px; /* базовий розмір тексту */
+  line-height: 1.5; /* C10 (множник) */
+  margin: 1.5;
 }
 
-/* -----------------------
-   2. Reset for links & lists
------------------------- */
-
-/* Generic reset */
+/* Скидання базових стилів, НЕ змінюємо поведінку елементів */
 a {
   text-decoration: none;
 }
 
-/* Utility class for links (optional, but often used in layouts) */
-.link {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* Reset list markers and spacing */
-ul,
-ol {
+ul {
   list-style: none;
-  margin: 0;
-  padding-left: 0;
+  margin: 2;
+  padding-left: 1.5;
 }
 
-/* Utility class for lists (optional) */
-.list {
-  list-style: none;
-  margin: 0;
-  padding-left: 0;
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
-/* -----------------------
-   3. Typography (line-height as multiplier)
-   Match layout ratios
------------------------- */
+/* ====== ЗМІННІ КОЛЬОРІВ (для зручності) ====== */
 
-/* Main hero title, e.g. "Effective Solutions for Your Business" */
-.hero-title {
-  font-size: 56px;
-  font-weight: 700;
-  line-height: 1.07; /* 60px / 56px ≈ 1.07 */
-  letter-spacing: 0.02em;
+:root {
+  --accent-color: #4d5ae5;
+  --accent-dark: #2e2f42;
+  --text-main: #2e2f42;
+  --text-muted: #434455;
+  --section-light: #f4f4fd;
+  --border-light: #e7e9fc;
 }
 
-/* Section titles like "Our Advantages", "Our Team", "Our Portfolio" */
-.section-title {
-  font-size: 36px;
-  font-weight: 700;
-  line-height: 1.11; /* 40px / 36px ≈ 1.11 */
-  letter-spacing: 0.02em;
-  text-align: center;
+/* ====== ХЕДЕР ====== */
+
+.header {
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
 
-/* Card / item titles (e.g. team member name, service title) */
-.item-title {
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 1.2; /* 24px / 20px = 1.2 */
-  letter-spacing: 0.02em;
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-/* Main text (paragraphs, descriptions) */
-.text {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.5; /* 24px / 16px = 1.5 */
-  letter-spacing: 0.02em;
+.logo {
+  font-size: 18px; /* C9 */
+  line-height: 1.17; /* C10 */
+  font-weight: 700; /* C12 – відрізняється від стандартного */
+  color: var(--accent-dark);
 }
 
-/* Navigation links in header */
+/* Навігація */
+
+.nav-list {
+  display: flex;
+  gap: 40px;
+}
+
 .nav-link {
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.5; /* matches layout */
-  letter-spacing: 0.02em;
-  color: #2e2f42; /* nav text color */
+  font-size: 14px; /* C9 */
+  line-height: 1.5; /* C10 */
+  font-weight: 500; /* C12 */
+  color: var(--accent-dark);
 }
 
-/* Contacts text in header */
-.header-contacts-link {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  color: #434455; /* default contacts color */
-}
-
-/* -----------------------
-   4. Buttons (interactive)
------------------------- */
-
-.button {
-  display: inline-block;
-  padding: 12px 24px; /* adjust if you have specific values */
-  border-radius: 4px;
-  border: none;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.5; /* text line-height as multiplier */
-  letter-spacing: 0.04em;
-  cursor: pointer; /* required by task */
-  background-color: #4d5ae5; /* primary button color */
-  color: #ffffff;
-}
-
-/* Hover / focus (active state from Style Guide) */
-.button:hover,
-.button:focus {
-  background-color: #404bbf; /* active/hover color */
-}
-
-/* -----------------------
-   5. Global active states for links
------------------------- */
-
-/* Main navigation hover/focus state */
+/* C3 – активний стан для посилань */
 .nav-link:hover,
 .nav-link:focus {
-  color: #404bbf; /* active link color per style guide */
+  color: var(--accent-color);
 }
 
-/* Header contacts text: color changes on hover/focus */
-.header-contacts-link:hover,
-.header-contacts-link:focus {
-  color: #404bbf; /* active state for contact links */
+/* Контакти у хедері */
+
+.header-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
-/* Generic interactive link state if needed */
-.link:hover,
-.link:focus,
-a:hover,
-a:focus {
-  color: #404bbf;
+.header-contacts__link {
+  font-size: 12px; /* C9 */
+  line-height: 1.33; /* C10 */
+  color: var(--text-muted); /* C11 */
 }
 
-/* -----------------------
-   6. Optional: focus outline for keyboard users
------------------------- */
+/* C3, C4 – зміна кольору контактів при hover/focus */
+.header-contacts__link:hover,
+.header-contacts__link:focus {
+  color: var(--accent-color);
+}
 
-.button:focus-visible,
-.nav-link:focus-visible,
-.header-contacts-link:focus-visible,
-.link:focus-visible,
-a:focus-visible {
-  outline: 2px solid #404bbf;
-  outline-offset: 2px;
+/* ====== ХЕРО-СЕКЦІЯ ====== */
+
+.hero {
+  padding-top: 72px;
+  padding-bottom: 72px;
+  h1 {
+    color: #f4f4fd;
+  }
+  background-color: var(--accent-dark); /* C11 */
+  text-align: center;
+  font-size: 32px; /* C9 – "Effective Solutions for Your Business" */
+  line-height: 1.25; /* C10 */
+  font-weight: 700; /* C12 */
+  color: #ffffff; /* C11 */
+  margin: 0;
+}
+
+/* ====== КНОПКИ ====== */
+
+.btn-primary {
+  cursor: pointer; /* C13 */
+  border: none;
+  border-radius: 4px;
+  padding: 2px 24px;
+  font-size: 14px; /* C9 */
+  line-height: 1.5; /* C10 */
+  font-weight: 500; /* C12 */
+  color: #ffffff;
+  background-color: var(--accent-color);
+  margin-top: 24px;
+}
+
+/* C3 – активний стан кнопок */
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--accent-dark);
+}
+
+/* ====== СЕКЦІЇ (СПІЛЬНІ НАЛАШТУВАННЯ) ====== */
+
+.section {
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
+
+.section__title {
+  font-size: 24px; /* C9 – для "Our Features", "Our Team", "Our Portfolio" */
+  line-height: 1.33; /* C10 */
+  font-weight: 700; /* C12 */
+  text-align: center;
+  margin: 0 0 32px 0;
+  color: var(--accent-dark);
+}
+
+/* ====== OUR FEATURES ====== */
+
+.features {
+  display: flex;
+  gap: 40px;
+}
+
+.features__list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.features__item-title {
+  font-size: 14px; /* C9 */
+  line-height: 1.5; /* C10 */
+  font-weight: 700; /* C12 */
+  color: var(--accent-dark);
+  margin-bottom: 4px;
+}
+
+.features__item-text {
+  font-size: 12px; /* C9 */
+  line-height: 1.5; /* C10 */
+  color: var(--text-muted);
+}
+
+/* ====== OUR TEAM ====== */
+
+.team-section {
+  background-color: var(--section-light); /* C11 */
+}
+
+.team-list {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.team-card {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.team-card__name {
+  font-size: 14px; /* C9 */
+  line-height: 1.5; /* C10 */
+  font-weight: 500; /* C12 */
+  color: var(--accent-dark);
+}
+
+.team-card__position {
+  font-size: 12px; /* C9 */
+  line-height: 1.5; /* C10 */
+  color: var(--text-muted);
+}
+
+/* ====== OUR PORTFOLIO ====== */
+
+.portfolio-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.portfolio-card {
+  max-width: 360px;
+}
+
+.portfolio-card__title {
+  font-size: 14px; /* C9 */
+  line-height: 1.5; /* C10 */
+  font-weight: 500; /* C12 */
+  color: var(--accent-dark);
+  margin-top: 8px;
+}
+
+.portfolio-card__category {
+  font-size: 12px; /* C9 */
+  line-height: 1.5; /* C10 */
+  color: var(--text-muted);
+}
+
+/* Якщо назви робіт – посилання, забезпечуємо активний стан (C3) */
+
+.portfolio-card__link:hover,
+.portfolio-card__link:focus {
+  color: var(--accent-color);
+}
+
+/* ====== ФУТЕР ====== */
+
+.footer {
+  margin-top: 72px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  background-color: var(--accent-dark); /* C11 */
+}
+.p {
+  font-size: 12px; /* C9 */
+  line-height: 1.5; /* C10 */
+  color: #e7e9fc;
 }
