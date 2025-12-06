@@ -9,6 +9,10 @@ body {
   margin: 0;
 }
 
+.container {
+  width: 1440px;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -23,15 +27,6 @@ ul {
 
 a {
   text-decoration: none;
-}
-
-/* універсальний контейнер макета */
-.container,
-.container-team {
-  width: 1158px;
-  margin: 0 auto;
-  padding-left: 15px;
-  padding-right: 15px;
 }
 
 /* ========= HEADER (вертикальний, як на макеті) ========= */
@@ -102,7 +97,7 @@ header address li + li {
 }
 
 header address a {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #434455;
@@ -124,48 +119,52 @@ header address a:focus {
 
 .hero {
   background-color: #2e2f42;
-  padding-top: 120px;
+  padding-top: 100px;
   padding-bottom: 120px;
-  text-align: center;
+  position: relative; /* база для абсолютного позиціонування кнопки */
+  text-align: center; /* h1 по центру */
 }
 
+/* Заголовок */
 .hero h1 {
-  max-width: 700px;
-  margin: 0 auto 32px;
   color: #ffffff;
-  font-size: 36px; /* ближче до макета */
+  font-size: 36px;
   line-height: 1.2;
+  margin: 0 auto;
+  max-width: 600px;
   letter-spacing: 0.02em;
 }
 
-/* кнопка (C3, C13) */
+/* ===== Кнопка: ЛІВИЙ НИЖНІЙ КУТ HERO ===== */
 
 .btn-primary {
   position: absolute;
-  left: 15px; /* притиснуто до лівого краю контейнера */
-  bottom: 560px; /* відступ від нижнього краю секції */
+  left: 15px; /* привʼязка до лівого краю контейнера */
+  bottom: 20px; /* відступ від нижнього краю hero секції */
+
   display: inline-block;
   min-width: 169px;
   padding: 12px 32px;
-  border-radius: 4px;
-  border: none;
+
   background-color: #4d5ae5;
   color: #ffffff;
-  font-weight: 500;
+  border: none;
+  border-radius: 4px;
+
   font-size: 16px;
+  font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.04em;
+
   cursor: pointer;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
 }
 
-/* hover / focus */
 .btn-primary:hover,
 .btn-primary:focus {
   background-color: #404bbf;
 }
 /* ========= FEATURES (ліва колонка, як на макеті) ========= */
-/* ====== FEATURES (вертикальні картки) ====== */
 
 .features {
   padding-top: 120px;
