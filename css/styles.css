@@ -7,9 +7,6 @@ body {
   font-size: 16px; /* базовий текст */
   line-height: 1.5; /* C10 */
   margin: 0;
-}
-
-.container {
   width: 1440px;
 }
 
@@ -29,7 +26,7 @@ a {
   text-decoration: none;
 }
 
-/* ========= HEADER (вертикальний, як на макеті) ========= */
+/* ========= HEADER ========= */
 
 .header {
   background-color: #ffffff;
@@ -38,11 +35,10 @@ a {
   padding-bottom: 16px;
 }
 
-/* логотип зверху зліва */
 
 .header-container > a {
   display: inline-block;
-  margin-left: 15px;
+  margin-left: 0;
   margin-bottom: 16px;
   font-family: "Raleway", sans-serif;
   font-size: 18px;
@@ -57,7 +53,6 @@ a {
   color: #4d5ae5;
 }
 
-/* навігація – стовпчиком під логотипом */
 
 .nav {
   margin-left: 46px;
@@ -81,8 +76,6 @@ a {
   color: #2e2f42;
 }
 
-/* контакти – під меню, як на макеті */
-
 header address {
   margin-left: 46px;
   font-style: normal;
@@ -103,8 +96,6 @@ header address a {
   color: #434455;
 }
 
-/* стани ховера/фокуса (C3, C4) */
-
 .nav a:hover,
 .nav a:focus {
   color: #404bbf;
@@ -117,30 +108,32 @@ header address a:focus {
 
 /* ========= HERO ========= */
 
-.hero {
+.hero .container {
   background-color: #2e2f42;
   padding-top: 100px;
   padding-bottom: 120px;
-  position: relative; /* база для абсолютного позиціонування кнопки */
-  text-align: center; /* h1 по центру */
+  position: relative; 
+  text-align: center;
 }
 
-/* Заголовок */
+
 .hero h1 {
   color: #ffffff;
-  font-size: 36px;
-  line-height: 1.2;
-  margin: 0 auto;
-  max-width: 600px;
+  font-size: 56px;
+  line-height: 1.07;
+  margin: 0 auto 32px;
+  max-width: 100%;
   letter-spacing: 0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+  text-align: center;
 }
-
-/* ===== Кнопка: ЛІВИЙ НИЖНІЙ КУТ HERO ===== */
 
 .btn-primary {
   position: absolute;
-  left: 15px; /* привʼязка до лівого краю контейнера */
-  bottom: 20px; /* відступ від нижнього краю hero секції */
+  left: 0; 
+  bottom: 20px; 
 
   display: inline-block;
   min-width: 169px;
@@ -164,32 +157,30 @@ header address a:focus {
 .btn-primary:focus {
   background-color: #404bbf;
 }
-/* ========= FEATURES (ліва колонка, як на макеті) ========= */
+/* ========= FEATURES  ========= */
 
 .features {
   padding-top: 120px;
   padding-bottom: 120px;
+
+  margin-bottom: 16px;
 }
 
-/* h2 “Our Features” — не стилізуємо (C15) */
-
-/* список карток – вертикальна колонка */
 .features .feature ul {
   display: flex;
-  flex-direction: column; /* ВЕРТИКАЛЬНЕ РОЗТАШУВАННЯ */
-  gap: 32px; /* відступ між картками */
-  max-width: 600px; /* ширина як на макеті */
-  margin-left: 15px; /* зміщення відповідно до макета */
+  flex-direction: column; 
+  gap: 32px; 
+  max-width: 600px; 
+  margin-left: 15px; /
 }
 
-/* окрема картка */
 .features .feature li {
   width: 100%;
 }
 
-/* заголовок картки */
 .features .feature h3 {
-  margin: 0 0 8px;
+  margin: 0 0 8;
+  margin-left: 46px;
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
@@ -197,38 +188,40 @@ header address a:focus {
   color: #2e2f42;
 }
 
-/* опис картки */
 .features .feature p {
   margin: 0;
+  margin-left: 46px;
   max-width: 550px;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  white-space: nowrap; /* ТЕКСТ У ОДИН РЯДОК */
-  overflow: hidden; /* не виходить за межі */
-  text-overflow: ellipsis; /* додає "..." якщо рядок надто довгий */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* ========= TEAM ========= */
 
-/* світла смуга з заголовком, як на макеті */
 .team-section {
   background-color: #f4f4fd;
 }
-
+.container-team {
+  padding-left: 46px;
+  padding-right: 0;
+  background-color: #f4f4fd;
+}
 .team-section .section-title {
-  margin: 0;
+  margin: 0px;
   padding-top: 8px;
   padding-bottom: 8px;
   text-align: center;
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: 36px;
+  line-height: 1.1;
   letter-spacing: 0.02em;
   color: #2e2f42;
   font-weight: 700;
+  background-color: #f4f4fd;
 }
-
-/* самі картки – на білому фоні, одна під одною */
 
 .team-section ul {
   background-color: #ffffff;
@@ -241,33 +234,25 @@ header address a:focus {
   border-bottom: 16px solid #f4f4fd;
 }
 
-/* фото зліва, як на макеті */
-.team-section li img {
-  margin-left: 15px;
-}
-
-/* імʼя і посада по центру сторінки (а не контейнера) */
-
 .team-section h3 {
   margin: 8px 0 4px;
   text-align: center;
   font-weight: 500;
-  font-size: 12px;
-  line-height: 1.5;
+  font-size: 20px;
+  line-height: 1.2;
   letter-spacing: 0.02em;
   color: #2e2f42;
 }
 
 .team-section p {
   text-align: center;
-  font-size: 10px;
+  font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
 }
 
 /* ========= PORTFOLIO ========= */
 
-/* фон білий – секція нижче блоку команди */
 .Portfolio-section {
   background-color: #ffffff;
   padding-top: 32px;
@@ -277,37 +262,33 @@ header address a:focus {
 .Portfolio-section .section-title {
   margin: 0 0 24px;
   text-align: center;
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: 36px;
+  line-height: 1.1;
   letter-spacing: 0.02em;
   color: #2e2f42;
 }
 
-/* одна колонка, як на макеті */
-
 .Portfolio-section ul {
-  width: 360px; /* ширина зображень */
-  margin-left: 15px; /* вирівнювання по лівому краю */
+  width: 360px;
+  margin-left: 46px;
 }
 
 .Portfolio-section li {
   margin-bottom: 32px;
 }
 
-/* тексти під фото – дрібні, ліворуч */
-
 .Portfolio-section h3 {
   margin: 8px 0 2px;
   font-weight: 500;
-  font-size: 10px;
-  line-height: 1.5;
+  font-size: 20px;
+  line-height: 1.2;
   letter-spacing: 0.02em;
   color: #2e2f42;
 }
 
 .Portfolio-section p {
   margin: 0;
-  font-size: 8px;
+  font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
 }
