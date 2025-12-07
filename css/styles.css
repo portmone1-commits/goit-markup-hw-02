@@ -1,12 +1,12 @@
 /* ========= BASE ========= */
 
 body {
-  font-family: "Roboto", sans-serif; /* C5, C6, C7 */
-  color: #434455; /* C8 */
+  font-family: "Roboto", sans-serif;
+  color: #434455;
   background-color: #ffffff;
-  font-size: 16px; /* базовий текст */
-  line-height: 1.5; /* C10 */
-  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+
   width: 1440px;
 }
 
@@ -30,16 +30,9 @@ a {
 
 .header {
   background-color: #ffffff;
-  border-bottom: 1px solid #e7e9fc;
-  padding-top: 16px;
-  padding-bottom: 16px;
 }
 
-
-.header-container > a {
-  display: inline-block;
-  margin-left: 0;
-  margin-bottom: 16px;
+.header-container a {
   font-family: "Raleway", sans-serif;
   font-size: 18px;
   line-height: 1.17;
@@ -49,22 +42,9 @@ a {
   color: #2e2f42;
 }
 
-.header-container > a span {
+.header-container a span {
   color: #4d5ae5;
-}
-
-
-.nav {
-  margin-left: 46px;
-  margin-bottom: 26px;
-}
-
-.nav ul {
-  display: block;
-}
-
-.nav li + li {
-  margin-top: 4px;
+  font-weight: 700;
 }
 
 .nav a {
@@ -77,16 +57,11 @@ a {
 }
 
 header address {
-  margin-left: 46px;
   font-style: normal;
 }
 
 header address ul {
   display: block;
-}
-
-header address li + li {
-  margin-top: 4px;
 }
 
 header address a {
@@ -108,49 +83,25 @@ header address a:focus {
 
 /* ========= HERO ========= */
 
-.hero .container {
+.hero {
   background-color: #2e2f42;
-  padding-top: 100px;
-  padding-bottom: 120px;
-  position: relative; 
-  text-align: center;
 }
-
 
 .hero h1 {
   color: #ffffff;
   font-size: 56px;
   line-height: 1.07;
-  margin: 0 auto 32px;
-  max-width: 100%;
   letter-spacing: 0.02em;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: clip;
-  text-align: center;
 }
 
 .btn-primary {
-  position: absolute;
-  left: 0; 
-  bottom: 20px; 
-
-  display: inline-block;
-  min-width: 169px;
-  padding: 12px 32px;
-
   background-color: #4d5ae5;
   color: #ffffff;
-  border: none;
-  border-radius: 4px;
-
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.04em;
-
   cursor: pointer;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
 }
 
 .btn-primary:hover,
@@ -159,29 +110,15 @@ header address a:focus {
 }
 /* ========= FEATURES  ========= */
 
-.features {
-  padding-top: 120px;
-  padding-bottom: 120px;
-
-  margin-bottom: 16px;
-}
-
 .features .feature ul {
   display: flex;
-  flex-direction: column; 
-  gap: 32px; 
-  max-width: 600px; 
-
-  margin-left: 15px; /
-}
-
-.features .feature li {
-  width: 100%;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 600px;
+  margin-left: 15px;
 }
 
 .features .feature h3 {
-  margin: 0 0 8;
-  margin-left: 46px;
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
@@ -190,15 +127,9 @@ header address a:focus {
 }
 
 .features .feature p {
-  margin: 0;
-  margin-left: 46px;
-  max-width: 550px;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 /* ========= TEAM ========= */
@@ -207,14 +138,9 @@ header address a:focus {
   background-color: #f4f4fd;
 }
 .container-team {
-  padding-left: 46px;
-  padding-right: 0;
   background-color: #f4f4fd;
 }
 .team-section .section-title {
-  margin: 0px;
-  padding-top: 8px;
-  padding-bottom: 8px;
   text-align: center;
   font-size: 36px;
   line-height: 1.1;
@@ -224,19 +150,11 @@ header address a:focus {
   background-color: #f4f4fd;
 }
 
-.team-section ul {
+.team-section li {
   background-color: #ffffff;
 }
 
-.team-section li {
-  width: 100%;
-  padding-top: 32px;
-  padding-bottom: 32px;
-  border-bottom: 16px solid #f4f4fd;
-}
-
 .team-section h3 {
-  margin: 8px 0 4px;
   text-align: center;
   font-weight: 500;
   font-size: 20px;
@@ -254,14 +172,11 @@ header address a:focus {
 
 /* ========= PORTFOLIO ========= */
 
-.Portfolio-section {
+.portfolio-section {
   background-color: #ffffff;
-  padding-top: 32px;
-  padding-bottom: 80px;
 }
 
-.Portfolio-section .section-title {
-  margin: 0 0 24px;
+.portfolio-section .section-title {
   text-align: center;
   font-size: 36px;
   line-height: 1.1;
@@ -269,17 +184,7 @@ header address a:focus {
   color: #2e2f42;
 }
 
-.Portfolio-section ul {
-  width: 360px;
-  margin-left: 46px;
-}
-
-.Portfolio-section li {
-  margin-bottom: 32px;
-}
-
-.Portfolio-section h3 {
-  margin: 8px 0 2px;
+.portfolio-section h3 {
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
@@ -287,7 +192,7 @@ header address a:focus {
   color: #2e2f42;
 }
 
-.Portfolio-section p {
+.portfolio-section p {
   margin: 0;
   font-size: 16px;
   line-height: 1.5;
@@ -298,8 +203,6 @@ header address a:focus {
 
 .footer {
   background-color: #2e2f42;
-  padding-top: 16px;
-  padding-bottom: 16px;
 }
 
 .footer .container {
@@ -316,7 +219,6 @@ header address a:focus {
   font-weight: 700;
   text-transform: uppercase;
   color: #f4f4fd;
-  margin-bottom: 8px;
 }
 
 .footer a span {
@@ -324,13 +226,8 @@ header address a:focus {
 }
 
 .footer p {
-  margin: 0;
-  max-width: 480px;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #f4f4fd;
-  white-space: nowrap;     /* ГОЛОВНЕ — не переносити рядок */
-  overflow: hidden;        /* щоб не ламав верстку */
-  text-overflow: ellipsis; /* додає "..." при нестачі місця */
 }
