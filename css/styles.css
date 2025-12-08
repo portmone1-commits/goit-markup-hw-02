@@ -6,8 +6,6 @@ body {
   background-color: #ffffff;
   font-size: 16px;
   line-height: 1.5;
-
-  width: 1440px;
 }
 
 img {
@@ -18,8 +16,6 @@ img {
 
 ul {
   list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
 a {
@@ -85,6 +81,7 @@ header address a:focus {
 
 .hero {
   background-color: #2e2f42;
+  text-align: center;
 }
 
 .hero h1 {
@@ -109,14 +106,6 @@ header address a:focus {
   background-color: #404bbf;
 }
 /* ========= FEATURES  ========= */
-
-.features .feature ul {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  max-width: 600px;
-  margin-left: 15px;
-}
 
 .features .feature h3 {
   font-weight: 500;
@@ -143,7 +132,7 @@ header address a:focus {
 .team-section .section-title {
   text-align: center;
   font-size: 36px;
-  line-height: 1.1;
+  line-height: 1.11;
   letter-spacing: 0.02em;
   color: #2e2f42;
   font-weight: 700;
@@ -179,7 +168,7 @@ header address a:focus {
 .portfolio-section .section-title {
   text-align: center;
   font-size: 36px;
-  line-height: 1.1;
+  line-height: 1.11;
   letter-spacing: 0.02em;
   color: #2e2f42;
 }
@@ -203,12 +192,6 @@ header address a:focus {
 
 .footer {
   background-color: #2e2f42;
-}
-
-.footer .container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
 }
 
 .footer a {
