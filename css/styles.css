@@ -81,7 +81,6 @@ header address a:focus {
 
 .hero {
   background-color: #2e2f42;
-  text-align: center;
 }
 
 .hero h1 {
@@ -89,6 +88,7 @@ header address a:focus {
   font-size: 56px;
   line-height: 1.07;
   letter-spacing: 0.02em;
+  text-align: center;
 }
 
 .btn-primary {
